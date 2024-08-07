@@ -14,7 +14,7 @@ internal class OfferClient : IOfferClient
     private const string _ethSecret = "Fill with your eth private key";
     private const string _starkSecret = " Fill with your stark private key";
 
-    public const string EthPublicAddress = "[fill_with_eth_public_address]";
+    private const string _ethPublicAddress = "[fill_with_eth_public_address]";
 
     // To be filled with your ownn client if needed, through Dependency Injection for instance
     private readonly ICommunicationClient _communicationClient = new CommunicationClient(new Uri("https://api.x.immutable.com/"));
