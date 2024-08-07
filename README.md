@@ -1,4 +1,4 @@
-# Immutable X C# client
+# Immutable X orders C# client
 A c# client for [immutable](https://www.immutable.com/) exchange. It allows for communication with the exchange (creating and cancelling orders) - you can reuse this code to save time.
 
 # Using the client
