@@ -65,7 +65,7 @@ internal class OfferClient : IOfferClient
         };
         var headers = new Dictionary<string, string>
         {
-            ["x-imx-eth-address"] = TradingBotConstants.EthPublicAddress,
+            ["x-imx-eth-address"] = _ethPublicAddress,
             ["x-imx-eth-signature"] = ethSignature
         };
 
@@ -97,7 +97,7 @@ internal class OfferClient : IOfferClient
         };
         var headers = new Dictionary<string, string>
         {
-            ["x-imx-eth-address"] = TradingBotConstants.EthPublicAddress,
+            ["x-imx-eth-address"] = _ethPublicAddress,
             ["x-imx-eth-signature"] = ethSignature
         };
 
@@ -143,7 +143,7 @@ internal class OfferClient : IOfferClient
         {
             AmountBuy = isBuyOrder ? "1" : ethPriceString,
             AmountSell = isBuyOrder ? ethPriceString : "1",
-            EthAddress = TradingBotConstants.EthPublicAddress,
+            EthAddress = _ethPublicAddress,
             BuyInformation = isBuyOrder ? erc721data : data,
             SellInformation = isBuyOrder ? data : erc721data
         };
