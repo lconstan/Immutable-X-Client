@@ -37,7 +37,7 @@ internal class OfferClient : IOfferClient
                                                                               int? orderId = null)
     {
 
-        SignableOrderRequest signableOrderRequest = GetSignableTradeRequest(collectionId, tokenId, price, currency, isBuyOrder);
+        SignableOrderRequest signableOrderRequest = GetSignableOrderRequest(collectionId, tokenId, price, currency, isBuyOrder);
 
         SignableOrderResponse response =
             await _communicationClient.PostAsync<SignableOrderRequest, SignableOrderResponse>("v3/signable-order-details", signableOrderRequest);
@@ -115,7 +115,7 @@ internal class OfferClient : IOfferClient
         };
     }
 
-    private static SignableOrderRequest GetSignableTradeRequest(string collectionId, string tokenId, decimal price, string currency, bool isBuyOrder)
+    private static SignableOrderRequest GetSignableOrderRequest(string collectionId, string tokenId, decimal price, string currency, bool isBuyOrder)
     {
         string ethPriceString = (price * (decimal)Math.Pow(10, 18)).ToString(CultureInfo.InvariantCulture);
         ethPriceString = ethPriceString.Substring(0, ethPriceString.IndexOf('.'));
